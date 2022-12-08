@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   logo: {
     paddingBottom: wp(5),
     width: wp(50),
-    height: wp(10),
+    height: wp(50),
   },
   footer: {
     padding: Platform.OS === 'android' ? wp(3) : (heightScreen < 700 ? wp(2) : 0),
@@ -50,7 +50,7 @@ export default function Splash({navigation}: {navigation: CompositeNavigationPro
   const getImage = async () => {
 
     setTimeout(() => {
-      setSplashLoading(false);
+      // setSplashLoading(false);
     }, 3000);
 
   }
@@ -59,10 +59,8 @@ export default function Splash({navigation}: {navigation: CompositeNavigationPro
   return (
     <AppView withSafeArea withHeader={false}>
       <View style={styles.container}>
-        {
-          imageUrl ? <Image style={styles.logo} source={{ uri:imageUrl }}/> : null
-        }
-        <Text>Welkam tu mai QR</Text>
+        <Image style={styles.logo} source={ require('~/assets/icon.png') }/>
+        <Text>QR Premium Pro Max Ultimate</Text>
       </View>
       <View style={styles.containerFooter}>
         <ActivityIndicator style={styles.loader} size={'large'} color={'grey'} />

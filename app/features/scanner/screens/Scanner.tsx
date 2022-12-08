@@ -1,10 +1,10 @@
 import {CompositeNavigationProp} from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
 import {
-  StyleSheet, View, ActivityIndicator, Platform, Dimensions, Text, Image, Button,
+  StyleSheet, View, ActivityIndicator, Platform, Dimensions, Text, Image, Button, ImageBackground,
 } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
-import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import {heightPercentageToDP, widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import AppView from '~/app/core/component/AppView';
 import Visible from '~/app/core/component/Visible';
 import ScannerScreens from '../config/Screens';
@@ -66,14 +66,17 @@ export default function Scanner({navigation}: {navigation: CompositeNavigationPr
   }
 
   return (
-    <AppView withSafeArea withHeader={false}>
+    <AppView withSafeArea withHeader={false} style={{ backgroundColor: '#000000' }}>
       <View style={styles.container}>
         <Visible visible={!scanned}>
-          <BarCodeScanner
-            onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-            style={StyleSheet.absoluteFillObject}
-          />
+          {/* <View style={{ width: wp(100), height: heightPercentageToDP(100) }}> */}
+            <BarCodeScanner
+              onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+              style={StyleSheet.absoluteFillObject}
+            />
+          {/* </View> */}
         </Visible>
+        <ImageBackground source={require('~/assets/scanner.png')} style={{ width: 400, height: 400, opacity: 0.5 }}/>
         <Visible visible={scanned}>
           <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />
         </Visible>

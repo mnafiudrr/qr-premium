@@ -9,6 +9,10 @@ const ScannerScreens = {
     KEY: 'Result',
     TITLE: 'Result',
   }),
+  HISTORY: new ScreenData<any>({
+    KEY: 'History',
+    TITLE: 'History',
+  }),
 };
 
 export default ScannerScreens;
