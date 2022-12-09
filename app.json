@@ -2,7 +2,7 @@
   "expo": {
     "name": "QR Premium",
     "slug": "qr-premium",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
@@ -20,12 +20,12 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.fiufiu.qrpremium"
+      "package": "com.fiufiu.qrpremium",
+      "versionCode": 2
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "permissions" : ["CAMERA"],
     "extra": {
       "eas": {
         "projectId": "65158a1e-4258-42bb-b9bd-6c57ddfecade"
